@@ -17,7 +17,7 @@ public class ProductModel {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
-
+    @NonNull
     public String title;
     public double price;
     public String description;
