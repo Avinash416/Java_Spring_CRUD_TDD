@@ -49,7 +49,6 @@ public class ProductServiceTest {
 //        3=>pass the dummy model to the service to assert the exception works or not
 //        4=>Verify f the required method from repo is invoked or not and which methods invoking with the passed data
         ProductModel mockProduct= new ProductModel();
-        mockProduct.setId(1L);
         mockProduct.setTitle("title");
         mockProduct.setPrice(13.3);
         mockProduct.setDescription("demo product");
@@ -75,7 +74,7 @@ public class ProductServiceTest {
 
        List<ProductModel>  mockProduct= new ArrayList<>();
        ProductModel product1= new ProductModel();
-       product1.setId(1L);
+
        product1.setTitle("first product");
        product1.setPrice(12.2);
        product1.setDescription("good product");
@@ -83,7 +82,6 @@ public class ProductServiceTest {
        product1.setImage("abc.jpg");
 
         ProductModel product2= new ProductModel();
-        product1.setId(2L);
         product1.setTitle("second product");
         product1.setPrice(14.2);
         product1.setDescription("good product 2");
@@ -122,7 +120,7 @@ public class ProductServiceTest {
 //        1=>Create a dummy model and assign a id to it
 //        2=>Now pass the same model to the mocked repository and return the same
 //        3=> Now pass the same id to the service and assert the result should be not null and the id should be the same
-        Long id= 4L;
+        Long id= 1L;
 
         ProductModel mockProduct= new ProductModel();
         mockProduct.setId(id);
@@ -142,7 +140,7 @@ public class ProductServiceTest {
 //        3=>Pass the same id to the service and assert the result should be empty or not present
 //        4=>Verify the findById method is invoked or not
 
-        Long id=5L;
+        Long id=1L;
 
         when(productsRepository.findById(id)).thenReturn(Optional.empty());
 
@@ -159,7 +157,7 @@ public class ProductServiceTest {
 //        3=>Pass the same id to the mocked repo and return the same
 //        4=>Now pass the id and map to the service and assert the result should be not null and the title should be the same
 //        5=>Verify the findById and save method is invoked or not
-        Long id=4L;
+        Long id=1L;
 
         ProductModel mockProduct=new ProductModel();
         mockProduct.setId(id);
@@ -189,7 +187,7 @@ public class ProductServiceTest {
 //        4=>Then invoke the service and assert the exception should be thrown
 //        5=>Verify the save method is not invoked or not
 
-        Long id=4L;
+        Long id=1L;
 
         when(productsRepository.findById(id)).thenReturn(Optional.empty());
 
@@ -212,7 +210,7 @@ public class ProductServiceTest {
 //        2=>Pass the same id to the mocked repo and return the same
 //        3=>Now pass the same id to the service and assert the result should be not null and the id should be the same
 
-        Long id= 4L;
+        Long id= 1L;
         ProductModel mockProduct=new ProductModel();
         mockProduct.setId(id);
 
@@ -232,7 +230,7 @@ public class ProductServiceTest {
 //        3=>Then invoke the service and assert the exception should be thrown
 //        4=>Verify the findById method is invoked or not
 //
-        Long id=4L;
+        Long id=1L;
         when(productsRepository.findById(id)).thenReturn(Optional.empty());
 
        RuntimeException exception=assertThrows(RuntimeException.class,()->{
